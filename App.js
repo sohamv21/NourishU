@@ -2,42 +2,9 @@
 //importing react,stylesheet,text and view
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,SafeAreaView} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-// Creating four screens - home screen(profile??),mealprep, calorie tracking, BMR calculator
-
-function HomeScreen(){
-  return(
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.textcontainer}>
-        Welcome to NourishU,This is the Homescreen, that I am thinking of making a profile screen
-      </Text>
-    </SafeAreaView>
-  );
-}
-
-function MealPlan(){
-  return(
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.textcontainer}>
-        This is the MealPlan screen, that will have recipe from Spoonacular API
-      </Text>
-    </SafeAreaView>
-  );
-}
-
-function NutritionTracker(){
-  return(
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.textcontainer}>
-        {/*This is the BMR calculator which will give calorie goals for cutting,maintaining,bulking based on height,bodyweight and age*/}
-        Nutrition Tracker
-      </Text>
-    </SafeAreaView>
-  );
-}
 
 // Creating a stack for navigating between these pages 
 const Stack = createNativeStackNavigator();
@@ -47,18 +14,38 @@ function App(){
     <NavigationContainer>
       {/* Initialroute name is set to Home so this will be the first screen that opens */}
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name = "Home" component={HomeScreen} options={{headerTitle:"Screen"}} />
-        <Stack.Screen name = "MealPlan" component={MealPlan} />
-        <Stack.Screen name = "NutritionTracker" component={NutritionTracker} />
+        <Stack.Screen name = "Home" component={HomeScreenPage} options={{headerTitle:"Screen"}} />
+        <Stack.Screen name = "MealPrep" component={MealPrep} />
+        <Stack.Screen name = "CalorieTracker" component={CalorieTracker} />
+        <Stack.Screen name = "BMRTracker" component={BMRTracker} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  //this is the main dark green background container 
+  BackgroundContainer: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: '#0D2727',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  DarkGreenAccent:{
+    flex: 1,
+    backgroundColor: '#1D9D66',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  MedGreenAccent:{
+    flex: 1,
+    backgroundColor: '#30AC75',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  LightGreenAccent:{
+    flex: 1,
+    backgroundColor: '#5DD49F',
     alignItems:"center",
     justifyContent:"center"
   },
