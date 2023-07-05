@@ -59,7 +59,7 @@ function App(){
     <NavigationContainer>
       {/* Initialroute name is set to Home so this will be the first screen that opens */}
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name = "Home" component={HomeScreen} options={{headerTitle:"Profile"}} />
+        <Stack.Screen name = "Home" component={HomeScreen} options={{headerTitle:"Screen"}} />
         <Stack.Screen name = "MealPrep" component={MealPrep} />
         <Stack.Screen name = "CalorieTracker" component={CalorieTracker} />
         <Stack.Screen name = "BMR Calculator" component={BMRCalculator} />
@@ -72,7 +72,7 @@ function App(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'darkgreen',
+    backgroundColor: 'green',
     alignItems:"center",
     justifyContent:"center"
   },
