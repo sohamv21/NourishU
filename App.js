@@ -6,12 +6,6 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// import three screens
-import HomeScreenPage from './pages/HomeScreen.js'; 
-import MealPrep from './pages/MealPrep.js';
-import CalorieTracker from './pages/CalorieTracker.js';
-import BMRTracker from './pages/BMRTracker.js';
-
 // Creating a stack for navigating between these pages 
 const Stack = createNativeStackNavigator();
 // Main app function
@@ -30,9 +24,28 @@ function App(){
 }
 
 const styles = StyleSheet.create({
-  container: {
+  //this is the main dark green background container 
+  BackgroundContainer: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: '#0D2727',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  DarkGreenAccent:{
+    flex: 1,
+    backgroundColor: '#1D9D66',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  MedGreenAccent:{
+    flex: 1,
+    backgroundColor: '#30AC75',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  LightGreenAccent:{
+    flex: 1,
+    backgroundColor: '#5DD49F',
     alignItems:"center",
     justifyContent:"center"
   },
