@@ -18,34 +18,22 @@ function HomeScreen(){
   );
 }
 
-function MealPrep(){
+function MealPlan(){
   return(
     <SafeAreaView style={styles.container}>
       <Text style={styles.textcontainer}>
-        This is the Mealprep screen, that will have recipe from Spoonacular API
+        This is the MealPlan screen, that will have recipe from Spoonacular API
       </Text>
     </SafeAreaView>
   );
 }
 
-function CalorieTracker(){
-  return(
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.textcontainer}>
-        {/*This is the calorie tracker that will have inputs for foods at breakfast,lunch,dinner 
-        and use Spoonacular to get calories for the food and add it to a total calorie count and show it as a progress of goal calories*/}
-        Calorie Tracker
-      </Text>
-    </SafeAreaView>
-  );
-}
-
-function BMRCalculator(){
+function NutritionTracker(){
   return(
     <SafeAreaView style={styles.container}>
       <Text style={styles.textcontainer}>
         {/*This is the BMR calculator which will give calorie goals for cutting,maintaining,bulking based on height,bodyweight and age*/}
-        BMR Calculator
+        Nutrition Tracker
       </Text>
     </SafeAreaView>
   );
@@ -60,14 +48,12 @@ function App(){
       {/* Initialroute name is set to Home so this will be the first screen that opens */}
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name = "Home" component={HomeScreen} options={{headerTitle:"Screen"}} />
-        <Stack.Screen name = "MealPrep" component={MealPrep} />
-        <Stack.Screen name = "CalorieTracker" component={CalorieTracker} />
-        <Stack.Screen name = "BMR Calculator" component={BMRCalculator} />
+        <Stack.Screen name = "MealPlan" component={MealPlan} />
+        <Stack.Screen name = "NutritionTracker" component={NutritionTracker} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
