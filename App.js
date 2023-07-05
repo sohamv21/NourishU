@@ -10,7 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function HomeScreen(){
   return(
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.BackgroundContainer}>
       <Text style={styles.textcontainer}>
         Welcome to NourishU,This is the Homescreen, that I am thinking of making a profile screen
       </Text>
@@ -20,7 +20,7 @@ function HomeScreen(){
 
 function MealPrep(){
   return(
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.BackgroundContainer}>
       <Text style={styles.textcontainer}>
         This is the Mealprep screen, that will have recipe from Spoonacular API
       </Text>
@@ -30,7 +30,7 @@ function MealPrep(){
 
 function CalorieTracker(){
   return(
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.BackgroundContainer}>
       <Text style={styles.textcontainer}>
         {/*This is the calorie tracker that will have inputs for foods at breakfast,lunch,dinner 
         and use Spoonacular to get calories for the food and add it to a total calorie count and show it as a progress of goal calories*/}
@@ -42,7 +42,7 @@ function CalorieTracker(){
 
 function BMRCalculator(){
   return(
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.BackgroundContainer}>
       <Text style={styles.textcontainer}>
         {/*This is the BMR calculator which will give calorie goals for cutting,maintaining,bulking based on height,bodyweight and age*/}
         BMR Calculator
@@ -70,9 +70,28 @@ function App(){
 
 
 const styles = StyleSheet.create({
-  container: {
+  //this is the main dark green background container 
+  BackgroundContainer: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: '#0D2727',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  DarkGreenAccent:{
+    flex: 1,
+    backgroundColor: '#1D9D66',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  MedGreenAccent:{
+    flex: 1,
+    backgroundColor: '#30AC75',
+    alignItems:"center",
+    justifyContent:"center"
+  },
+  LightGreenAccent:{
+    flex: 1,
+    backgroundColor: '#5DD49F',
     alignItems:"center",
     justifyContent:"center"
   },
