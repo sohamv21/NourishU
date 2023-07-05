@@ -51,9 +51,9 @@ function BMRCalculator(){
   );
 }
 
-//creating a stack for navigating between these pages 
+// Creating a stack for navigating between these pages 
 const Stack = createNativeStackNavigator();
-//main app function
+// Main app function
 function App(){ 
   return (
     <NavigationContainer>
