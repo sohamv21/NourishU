@@ -5,6 +5,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreenPage from "./pages/HomeScreen"
+import MealPrep from './pages/MealPrep';
+import CalorieTracker from './pages/CalorieTracker';
+import BMRTracker from './pages/BMRTracker';
 
 // Creating a stack for navigating between these pages 
 const Stack = createNativeStackNavigator();
