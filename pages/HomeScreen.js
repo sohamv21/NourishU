@@ -1,4 +1,4 @@
-import { Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, TouchableOpacity,Image } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
   textcontainer: {
     color:"#fff",
     fontSize:20
+  },
+  button:{
+
   }
 });
 
@@ -20,9 +23,9 @@ const HomeScreenPage = ({navigation}) => {
       <Text style={styles.textcontainer}>
         Welcome to NourishU,This is the Homescreen, that I am thinking of making a profile screen
       </Text>
-      <TouchableOpacity title="Go to BMR Tracker"
+      <TouchableOpacity style ={styles.button} title = "Go to BMR Tracker"
         onPress={() => navigation.navigate('BMRTracker')}>
-          <Text>Press here to go to details</Text>
+          <Text>Press here to go to BMR Tracker</Text>
         </TouchableOpacity>
     </SafeAreaView>
   );
