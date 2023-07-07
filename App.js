@@ -28,7 +28,7 @@ function App(){
 }
 
 const styles = StyleSheet.create({
-  //this is the main dark green background container 
+  // Colors are in a new page Colors.js, have to look at shifting these styles
   BackgroundContainer: {
     flex: 1,
     backgroundColor: '#0D2727',

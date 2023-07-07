@@ -1,15 +1,16 @@
 import { Text, SafeAreaView } from 'react-native';
 import { StyleSheet } from 'react-native';
+import Colors from './Colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: Colors.PrimaryGreenColor,
     alignItems:"center",
     justifyContent:"center"
   },
   textcontainer: {
-    color:"#fff",
+    color:Colors.WhiteTextColor,
     fontSize:20
   }
 });
