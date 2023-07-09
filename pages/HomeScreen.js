@@ -70,7 +70,7 @@ const HomeScreenPage = ({navigation}) => {
   return(
     <SafeAreaView style={{...styles.container, justifyContent: 'flex-start'}}>
       <TouchableOpacity style ={styles.button1} title = "Profile Button" // Profile Button
-        onPress={() => navigation.navigate('HomeScreen')}>
+        onPress={() => navigation.navigate('Home')}>
               <Image
                 source={require('../assets/ProfileImage.png')}
                 style={{ width: 30, height: 30, marginRight: 5 }}
@@ -87,7 +87,7 @@ const HomeScreenPage = ({navigation}) => {
       </Text>
 
       <TouchableOpacity style ={styles.button1} title = "HomeScreen Button" //Tab #1: Home
-        onPress={() => navigation.navigate('HomeScreen')}>
+        onPress={() => navigation.navigate('Home')}>
               <Image
                 source={require('../assets/HomeImage.png')}
                 style={{ width: 30, height: 30, marginRight: 5 }}
@@ -119,10 +119,10 @@ const HomeScreenPage = ({navigation}) => {
       <TouchableOpacity style ={styles.button4} title = "Calorie Tracker Button" //Tab #4: Calorie
         onPress={() => navigation.navigate('CalorieTracker')}>
           <View style={{ flexDirection: 'row' }}>
-              <Image
+              {/* <Image
                 source={require('../assets/CalorieImage.png')}
                 style={{ width: 35, height: 30, marginRight: 5 }}
-              />
+              /> */}
           </View>
         </TouchableOpacity>
     </SafeAreaView>
