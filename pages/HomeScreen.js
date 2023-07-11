@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 const HomeScreenPage = ({navigation}) => {
   return(
     <SafeAreaView style={{...styles.container, justifyContent: 'flex-start'}}>
-      <TouchableOpacity style ={styles.button1} title = "Profile Button" // Profile Button
+      {/* <TouchableOpacity style ={styles.button1} title = "Profile Button" // Profile Button
         onPress={() => navigation.navigate('Home')}>
               <Image
                 source={require('../assets/ProfileImage.png')}
@@ -77,7 +77,7 @@ const HomeScreenPage = ({navigation}) => {
               />
           <View style={{ flexDirection: 'row' }}>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
       <Text style={{...styles.textContainer1, marginTop: 70}}>
         Welcome to NourishU User!
@@ -86,7 +86,7 @@ const HomeScreenPage = ({navigation}) => {
         Your wellness companion designed for success
       </Text>
 
-      <TouchableOpacity style ={styles.button1} title = "HomeScreen Button" //Tab #1: Home
+      {/* <TouchableOpacity style ={styles.button1} title = "HomeScreen Button" //Tab #1: Home
         onPress={() => navigation.navigate('Home')}>
               <Image
                 source={require('../assets/HomeImage.png')}
@@ -100,7 +100,7 @@ const HomeScreenPage = ({navigation}) => {
         onPress={() => navigation.navigate('BMRTracker')}>
           <View style={{ flexDirection: 'row' }}>
               <Image
-                source={require('../assets/BMRImage.png')}
+                source={require('../assets/ScaleImage.png')}
                 style={{ width: 30, height: 30, marginLeft: 20 }}
               />
           </View>
@@ -123,8 +123,8 @@ const HomeScreenPage = ({navigation}) => {
                 source={require('../assets/CalorieImage.png')}
                 style={{ width: 35, height: 30, marginRight: 5 }}
               /> */}
-          </View>
-        </TouchableOpacity>
+          {/* </View>
+        </TouchableOpacity> */}
     </SafeAreaView>
   );
 }
