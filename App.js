@@ -21,7 +21,9 @@ function MyTabs(){
 
 }
 // Main app function
-function App(){ 
+function App(){
+  
+  
   return (
     <NavigationContainer>
       {/* Initialroute name is set to Home so this will be the first screen that opens */}
@@ -130,4 +132,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-
