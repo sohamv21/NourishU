@@ -55,18 +55,7 @@ function App(){
                       );}
                     }}>
         </Tab.Screen>
-        <Tab.Screen name= "BMRTracker"
-                    component={BMRTracker}
-                    options={{title: "BMR Tracker",
-                    tabBarIcon:({size,focused,color}) => {
-                      return(
-                        <Image
-                        source={require('./assets/ScaleImage.png')}
-                        style={{ width: 30, height: 30, marginRight: 5 }}
-                      />
-                      );}
-                    }}>
-        </Tab.Screen>
+        
         <Tab.Screen name= "MealPrep"
                     component={MealPrep}
                     options={{title: "Meal Prep",
@@ -85,7 +74,19 @@ function App(){
                     tabBarIcon:({size,focused,color}) => {
                       return(
                         <Image
-                        source={require('./assets/MealPrepImage.png')}
+                        source={require('./assets/CalorieTracker.png')}
+                        style={{ width: 30, height: 30, marginRight: 5 }}
+                      />
+                      );}
+                    }}>
+        </Tab.Screen>
+        <Tab.Screen name= "BMRTracker"
+                    component={BMRTracker}
+                    options={{title: "BMR Calculator",
+                    tabBarIcon:({size,focused,color}) => {
+                      return(
+                        <Image
+                        source={require('./assets/ScaleImage.png')}
                         style={{ width: 30, height: 30, marginRight: 5 }}
                       />
                       );}
