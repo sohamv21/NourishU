@@ -10,7 +10,7 @@ import HomeScreenPage from "./pages/HomeScreen"
 import MealPrep from './pages/MealPrep';
 import CalorieTracker from './pages/CalorieTracker';
 import BMRTracker from './pages/BMRTracker';
-
+import Colors from './pages/Colors';
 // Creating a stack for navigating between these pages 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,7 +31,18 @@ function App(){
         <Stack.Screen name = "CalorieTracker" component={CalorieTracker} />
         <Stack.Screen name = "BMRTracker" component={BMRTracker} />
       </Stack.Navigator> */}
-      <Tab.Navigator initialRouteName='Home'>
+      <Tab.Navigator initialRouteName='Home'screenOptions={({ route }) => ({
+          headerShown: false,
+          tabBarStyle: {
+            height: 90,
+            paddingHorizontal: 5,
+            paddingTop: 0,
+            backgroundColor: Colors.LightGreenAccent,
+            position: 'absolute',
+            borderTopWidth: 0,
+            
+        },
+      })}>
         <Tab.Screen name= "Home"
                     component={HomeScreenPage}
                     options={{title: "My Profile",
