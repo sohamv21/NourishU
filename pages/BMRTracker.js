@@ -82,10 +82,9 @@ class BMRTracker extends React.Component {
     return(
       <SafeAreaView style={styles.container}>
         <View>
-          <ActivitySlider onValueChange={() => this.setState({
-            userDetails: this.state.userDetails,
-            activityLevel: value
-          })}/>
+          <ActivitySlider
+            value={3}
+          />
           <Text style={{...styles.textcontainer}}>
             Your BMR is:
           </Text>
@@ -127,26 +126,35 @@ const Warning = () => {
   )
 }
 
-const ActivitySlider = props => {
-  const [value, updateActivity] = useState(props.activityLevel)
+class ActivitySlider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      value: props.value
+    }
+  }
 
-  return (
-    <View>
-      <Text style={{...styles.textcontainer}}>
-        Select your activity level:
-      </Text>
-      <Slider 
-        minimumValue={1} 
-        maximumValue={5}
-        value={3}
-        step={1}
-        onValueChange={value => { props.onValueChange(); updateActivity(value)}}
-      />
-      <Text style={{...styles.textcontainer, fontSize: 14}}>
-        {ActivityDescriptions[value]}
-      </Text>
-    </View>
-  );
+  render() {
+    return (
+      <View>
+        <Text style={{...styles.textcontainer}}>Select your activity level:</Text>
+        <Slider 
+          minimumValue={1}
+          maximumValue={5}
+          step={1}
+          value={this.state.value}
+          onValueChange={this.handleChange}
+        />
+        <Text style={{...styles.textcontainer, fontSize: 14}}>{ActivityDescriptions[this.state.value]}</Text>
+      </View>
+    )
+  }
+
+  handleChange(value) {
+    this.setState({value: value})
+  }
+
 }
 
 export default BMRTracker;
