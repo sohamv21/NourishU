@@ -1,8 +1,8 @@
-import { Text, SafeAreaView, Switch, View } from 'react-native';
+import { Text, SafeAreaView, Switch, View, ScrollView } from 'react-native';
 import { StyleSheet } from 'react-native';
 import Colors from './Colors';
 import React, { useState } from 'react';
-import { Slider } from '@react-native-assets/slider';
+import { Slider } from '@miblanchard/react-native-slider';
 
 export const Genders = Object.freeze({
   Male: Symbol("Male"),
@@ -10,19 +10,19 @@ export const Genders = Object.freeze({
 });
 
 export const ActivityLevels = Object.freeze({
-  Sedentary: 1.2,
-  LightActivity: 1.375,
-  ModerateActivity: 1.55,
-  HighActivity: 1.725,
-  SuperActive: 1.9
+  1: 1.2,
+  2: 1.375,
+  3: 1.55,
+  4: 1.725,
+  5: 1.9
 });
 
 export const ActivityDescriptions = Object.freeze({
-  Sedentary: "Little or no exercise.",
-  LightActivity: "Light exercise 1-3 days/week.",
-  ModerateActivity: "Moderate exercise 3-5 days/week.",
-  HighActivity: "Hard exercise 6-7 days/week.",
-  SuperActive: "Very hard exercise and a physical job."
+  1: "Little or no exercise.",
+  2: "Light exercise 1-3 days/week.",
+  3: "Moderate exercise 3-5 days/week.",
+  4: "Hard exercise 6-7 days/week.",
+  5: "Very hard exercise and a physical job."
 });
 
 const warningColors = {
@@ -54,6 +54,11 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     padding: 10,
     opacity: .75
+  },
+  slidercontainer: {
+    flex: 1,
+    alignItems: 'stretch',
+    justifyContent: 'center'
   }
 });
 
@@ -62,37 +67,35 @@ class BMRTracker extends React.Component {
     super(props);
     this.state = {
       userDetails: {
-        gender: Male,
+        gender: Genders.Male,
         weightKg: 60,
         heightCm: 180,
         ageYr: 20
       },
-      activityLevel: ActivityLevels.Sedentary
+      activityLevel: 3
     }
   }
 
   render() {
+    bmr = CalculateBMR(this.state.userDetails, this.state.activityLevel)
+
     return(
       <SafeAreaView style={styles.container}>
         <View>
-          <Slider 
-            minimumValue={1}
-            maximumValue={5}
-            value={3}
-            step={1}
-          />
+          <ActivitySlider onValueChange={() => this.setState({
+            userDetails: this.state.userDetails,
+            activityLevel: value
+          })}/>
           <Text style={{...styles.textcontainer}}>
             Your BMR is:
           </Text>
           <View style={{flexDirection: 'row'}}>
-            <Text style={{...styles.textBMR}}>
-              {Math.round(BMR_Mifflin_St_Jeor(this.state.userDetails.gender, 62.5, 180, 20))}
-            </Text>
+            <Text style={{...styles.textBMR}}>{bmr}</Text>
             <Text style={{...styles.textBMR, fontSize: 40, paddingLeft: 20}}>
               Cal/day
             </Text>
           </View>
-          <Warning></Warning>
+          <Warning/>
         </View>
       </SafeAreaView>
     );
@@ -122,6 +125,28 @@ const Warning = () => {
       <Text style={{fontSize: 10}}>⚠️ This figure is an estimate, and should be treated as such.</Text>
     </View>
   )
+}
+
+const ActivitySlider = props => {
+  const [value, updateActivity] = useState(props.activityLevel)
+
+  return (
+    <View>
+      <Text style={{...styles.textcontainer}}>
+        Select your activity level:
+      </Text>
+      <Slider 
+        minimumValue={1} 
+        maximumValue={5}
+        value={3}
+        step={1}
+        onValueChange={value => { props.onValueChange(); updateActivity(value)}}
+      />
+      <Text style={{...styles.textcontainer, fontSize: 14}}>
+        {ActivityDescriptions[value]}
+      </Text>
+    </View>
+  );
 }
 
 export default BMRTracker;
