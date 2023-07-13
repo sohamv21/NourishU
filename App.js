@@ -15,6 +15,7 @@ import Colors from './pages/Colors';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+
 function MyTabs(){
 
 
@@ -34,7 +35,7 @@ function App(){
         <Stack.Screen name = "BMRTracker" component={BMRTracker} />
       </Stack.Navigator> */}
       <Tab.Navigator initialRouteName='Home'screenOptions={({ route }) => ({
-          headerShown: false,
+          headerShown: true,
           tabBarStyle: {
             height: 90,
             paddingHorizontal: 5,
