@@ -81,21 +81,25 @@ class BMRTracker extends React.Component {
 
     return(
       <SafeAreaView style={styles.container}>
-        <View>
-          <ActivitySlider
-            value={3}
-          />
-          <Text style={{...styles.textcontainer}}>
-            Your BMR is:
+        <ActivitySlider
+          value={this.state.activityLevel}
+          onValueChange={value => {
+            this.setState({
+              activityLevel: value,
+              userDetails: this.state.userDetails
+            })
+          }}
+        />
+        <Text style={{...styles.textcontainer}}>
+          Your BMR is:
+        </Text>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={{...styles.textBMR}}>{bmr}</Text>
+          <Text style={{...styles.textBMR, fontSize: 40, paddingLeft: 20}}>
+            Cal/day
           </Text>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{...styles.textBMR}}>{bmr}</Text>
-            <Text style={{...styles.textBMR, fontSize: 40, paddingLeft: 20}}>
-              Cal/day
-            </Text>
-          </View>
-          <Warning/>
         </View>
+        <Warning/>
       </SafeAreaView>
     );
   }
@@ -153,6 +157,9 @@ class ActivitySlider extends React.Component {
 
   handleChange(value) {
     this.setState({value: value})
+    if (this.props.onValueChange != null) {
+      this.props.onValueChange(value)
+    }
   }
 
 }
