@@ -36,10 +36,12 @@ function App(){
       </Stack.Navigator> */}
       <Tab.Navigator initialRouteName='Home'screenOptions={({ route }) => ({
           headerShown: true,
-          headerBackground: Colors.DarkGreenAccent,
+          headerTintColor: Colors.WhiteTextColor,
+          headerStyle: {backgroundColor:Colors.PrimaryGreenColor,elevation:0},
+          headerShadowVisible: false,
           tabBarStyle: {
             height: 90,
-            paddingHorizontal: 5,
+            paddingHorizontal: 0,
             paddingTop: 0,
             backgroundColor: Colors.LightGreenAccent,
             position: 'absolute',
