@@ -10,23 +10,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.PrimaryGreenColor,
-    alignItems:"center",
-    justifyContent:"center"
-  },
-  textcontainer: {
-    color:Colors.WhiteTextColor,
-    fontSize:40
-  },
-  textBMR: {
-    color:Colors.MedGreenAccent,
-    fontSize: 60,
-    alignSelf: "baseline",
-    verticalAlign: 'bottom'
-  },
-  slidercontainer: {
-    flex: 1,
-    alignItems: 'stretch',
-    justifyContent: 'center'
+    alignContent: 'stretch'
   }
 });
 
@@ -47,24 +31,23 @@ class BMRTracker extends React.Component {
   render() {
     return(
       <SafeAreaView style={styles.container}>
-        <ActivityLevel
-          value={this.state.activityLevel}
-          onValueChange={value => {
-            this.setState({
-              activityLevel: value,
-              userDetails: this.state.userDetails
-            })
-          }}
-        />
-        <BMR activityLevel={ () => this.state.activityLevel } userDetails={ () => this.state.userDetails }/>
+        <View style={{ margin: 10 }}>
+          <ActivityLevel
+            value={this.state.activityLevel}
+            onValueChange={value => {
+              this.setState({
+                activityLevel: value,
+                userDetails: this.state.userDetails
+              })
+            }}
+          />
+        </View>
+        <View style={{ margin: 10 }}>
+          <BMR activityLevel={ () => this.state.activityLevel } userDetails={ () => this.state.userDetails }/>
+        </View>
       </SafeAreaView>
     );
   }
 }
-
-
-
-
-
 
 export default BMRTracker;

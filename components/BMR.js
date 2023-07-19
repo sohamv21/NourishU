@@ -12,10 +12,12 @@ const styles = StyleSheet.create({
 	figure: {
 		color: Colors.MedGreenAccent,
 		fontSize: 60,
+		verticalAlign: 'middle',
 	},
 	unit: {
 		color: Colors.LightGreenAccent,
 		fontSize: 40,
+		verticalAlign: 'middle',
 	}
 });
 

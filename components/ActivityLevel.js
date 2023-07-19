@@ -49,6 +49,7 @@ class ActivityLevel extends React.Component {
             step={1}
             value={this.state.value}
             onValueChange={this.handleChange}
+            thumbTintColor={Colors.MedGreenAccent}
           />
           <Text style={{...styles.description, fontSize: 14}}>{ActivityDescriptions[this.state.value]}</Text>
         </View>
